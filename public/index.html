@@ -1,38 +1,37 @@
 <html>
     <head>
-        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="./css/styles.css">
         <link rel="stylesheet" href="./css/olmap.css">
     </head>
     <body>
         <div class="grid grid-cols-12">
-            <div class="col-span-6">
+            <div class="col-span-6 border-r-2 border-gray-400">
                 <div id="map" class="h-screen w-full flex"></div>
             </div>
             <div class="col-span-6">
-                Hello
+                <div id="pano" class="hidden flex w-full h-screen">
+                </div>
+                <div id="missing" class="hidden w-full h-screen flex justify-center">
+                    <div class="m-auto flex rounded overflow-hidden shadow-lg p-7 bg-gray-100 text-center">The image specified for this<br/>
+                        coordinate was not found.<br/>
+                        Please Select another coordinate.
+                    </div>
+                </div>
+                <div id="notsel" class="w-full h-screen flex justify-center">
+                    <div class="m-auto flex rounded overflow-hidden shadow-lg p-7 bg-gray-100 text-center">Please select a coordinate
+                        to view its image.<br/>
+                        Some coordinates may not have any image.<br/>
+                        Only 10 images but 2232 coordinates. 
+                    </div>
+                </div>
             </div>
+            <script src="./js/jquery/cdn.js"></script>
             <script src="./js/cdn.js"></script>
-            <script>
-                var attribution = new ol.control.Attribution({
-                    collapsible: false
-                });
-
-                var map = new ol.Map({
-                    controls: ol.control.defaults({attribution: false}).extend([attribution]),
-                    layers: [
-                        new ol.layer.Tile({
-                            source: new ol.source.OSM()
-                        })
-                    ],
-                    target: 'map',
-                    view: new ol.View({
-                        center: ol.proj.fromLonLat([4.35247, 50.84673]),
-                        maxZoom: 18,
-                        zoom: 12
-                    })
-                });
-            </script>
+            <script src="./js/testscript.js"></script>
+            <script src="./js/panolens/three.min.js"></script>
+            <script src="./js/panolens/panolens.min.js"></script>
+            <script src="./js/panolens.js"></script>
+            <script src="./js/getdata.js"></script>
         </div>
-        
     </body>
 </html>
