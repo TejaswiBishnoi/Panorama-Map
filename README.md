@@ -37,4 +37,20 @@ Now how to use the app? Just click on any point/circle to view the panorama.</br
   <li><b>package.json</b>: This contains the node configuration of the app</li>
   <li><b>public</b>: This folder contains all the files required to use the webapp, including HTML, JS, CSS and images</li>
   <li><b>readme_img</b>: Images for this Readme.md</li>
- </ol>
+</ol>
+<h4>Contents of public folder</h4>
+<ol>
+  <li><b>index.html</b>: Index file of the web-app</li>
+  <li><b>asset</b>: Contains the files like images and the text file mapping coordinates and images.</li>
+  <li><b>css</b>: Contains the stylesheets for the web app. olmap.css is the OpenLayer's stylesheet. styles.css is the Tailwind's output and main stylesheet of the app.</li>
+  <li><b>js</b>: Contains JS files of the web-app. Contains all the logic of the app.</li>
+</ol>
+<h4>Contents of js folder</h4>
+<ol>
+  <li><b>cdn.js</b>: Contains a copy of OpenLayers map CDN file.</li>
+  <li><b>getdata.js</b>: This file loads all the datapoints on the OL map and detects clicks.</li>
+  <li><b>panolens.js</b>: Creates some panolens objects placeholders(can be merged with getdata.js!)</li>
+  <li><b>main.js</b>: This file intitialises the map, layers and styles.</li>
+  <li><b>jquery</b>: This folder contains a single js file, cdn.js and this file is a cached copy of jQuery CDN.</li>
+  <li><b>panolens</b>: This folder contains a two js files, panolens.min.js and three.min.js. These files are copy of panolens and three.js v105's minified builds.</li>
+</ol>
