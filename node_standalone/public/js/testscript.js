@@ -1,29 +1,36 @@
 //import ol from "./cdn.js"
 
 const count = 1;
-const features = new Array(count);
-const e = 18000000;
-for (let i = 0; i < count; ++i) {
-  features[i] = new ol.Feature({
-    'geometry': new ol.geom.Point(ol.proj.fromLonLat([10.93376479, 50.98380407])),
-    'i': i,
-    'size': 10
-  });
-}
-console.log(2 * e * Math.random() - e);
+const features = [];
+// const e = 18000000;
+// for (let i = 0; i < count; ++i) {
+//   features[i] = new ol.Feature({
+//     'geometry': new ol.geom.Point(ol.proj.fromLonLat([10.93376479, 50.98380407])),
+//     'i': i,
+//     'size': 10
+//   });
+// }
+//console.log(2 * e * Math.random() - e);
 const styles = {
   '10': new ol.style.Style({
     image: new ol.style.Circle({
-      radius: 4,
+      radius: 5,
       fill: new ol.style.Fill({color: '#fb615b'}),
-      stroke: new ol.style.Stroke({color: '#fff554', width: 1}),
+      stroke: new ol.style.Stroke({color: '#fff554', width: 2}),
     }),
   }),
   '20': new ol.style.Style({
     image: new ol.style.Circle({
-      radius: 10,
-      fill: new ol.style.Fill({color: '#666666'}),
-      stroke: new ol.style.Stroke({color: '#bada55', width: 1}),
+      radius: 7,
+      fill: new ol.style.Fill({color: '#007acc'}),
+      stroke: new ol.style.Stroke({color: '#ffffff', width: 2}),
+    }),
+  }),
+    '30': new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 5,
+      fill: new ol.style.Fill({color: '#90a4ae'}),
+      stroke: new ol.style.Stroke({color: '#ffffff', width: 1}),
     }),
   }),
 };
@@ -69,10 +76,3 @@ var map = new ol.Map({
 //   features[0].set('size', 20)
 //   console.log(features[0]);
 // }, 1000)
-map.on("click", (e)=>{
-    console.log(map.getFeaturesAtPixel(e.pixel));
-    var x = map.getFeaturesAtPixel(e.pixel);    
-    if (x!= null && x.length != 0){
-        x[0].set('size', x[0].get('size')==20?10:20)
-    }
-})
